@@ -10,6 +10,41 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        section.start-section
+          .container.hero__container
+            header.header
+              .header__logo
+                a.logo(href="") AВ
+              nav.header__nav
+                ul.menu__list
+                  - var menuLinks = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                  each item in menuLinks
+                    li.menu__item
+                      a(href="#").menu__link #{item}
+              .header__social
+                ul.socials
+                  - var socials = ['insta', 'vk', 'github'];
+                  each item in socials
+                    li.socials__item
+                      a(href="#").socials__link
+                        +icon(item, 'socials__icon')
+            .info
+              .info__title Личный сайт #[span.userinfo__occ веб разработчика]
+              .info__name Анатолий Барцев
+            .button
+                .scroll-down
+                  a(href="").scroll-down__btn Скролл
+            .aboutinfo
+              .about__left
+                .about__avatar
+                  +image('content/user.jpg', 'user__avatar-pic').avatar
+                .about__info
+              .about__rigt
+        section.skils-section
+        section.works-section
+        section.reviews-section
+        section.callback-section
+      .footer-section
+        //+image('content/user.jpg', 'user-pic')
+        // +icon('link', 'link-class')
+        //.icon-bg
