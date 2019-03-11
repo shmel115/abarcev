@@ -1,7 +1,9 @@
 .header{
-  display:grid;
+  grid-areas: header;
+  display: grid;
   grid-template: "logo nav social" 1fr
-  / 1fr 1fr 1fr
+  / 1fr 1fr 1fr;
+  align-items: center;
 }
 .header__logo{
     grid-area: logo;
@@ -15,4 +17,5 @@
 .menu__list {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
