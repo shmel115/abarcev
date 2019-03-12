@@ -1,8 +1,8 @@
 .aboutinfo{
-    display: about;
     display: grid;
-    grid-template: "left rigt" 1fr
-  / 1fr 3fr;
+    grid-template: "left right" 1fr
+  / 1fr 2.5fr;
+  margin-top: 5rem;
 
 }
 .about__left{
@@ -10,4 +10,58 @@
 }
 .about__right{
     grid-area: right;
+    width: 60%;
+    margin: 0 6rem;
+}
+
+.about__desc {
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+.about__title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin-bottom: 1.875rem;
+    color: #414c63;
+}
+.about__ps {
+    font-style: italic;
+    margin-bottom: 2.25rem;
+}
+.about__avatar {
+    width: 12.5rem;
+    height: 12.5rem;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0.625rem 1.5rem 0 rgba(0,0,0,.3);
+    box-shadow: 0 0.625rem 1.5rem 0 rgba(0,0,0,.3);
+    margin: 0 4.375rem;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+img.user__avatar {
+    width: 200px;
+    max-height: 273px;
+}
+.info__block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+        padding: 4rem 3rem;
+}
+.info__block-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: .9375rem;
+}
+.info__block-title {
+    color: $text-color;
+    
+}
+.about__text-info {
+    margin-bottom: 4rem;
+    color: $text-color;
+}
+.about__ps{
+    color: $text-color;
 }

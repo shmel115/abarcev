@@ -37,14 +37,14 @@ html(lang="en")
             .aboutinfo
               .about__left
                 .about__avatar
-                  +image('content/user.jpg', 'user__avatar-pic').avatar
-                .about__info
-                 - var userabout = [['Проживаю:', "Новосибирск"],['Возраст:', "27 лет"],['Родился:', "1 января 1991"]];
-                 .info__block
+                  +image('content/user.jpg', 'user__avatar').avatar
+                - var userabout = [['Проживаю:', "Брянск"],['Возраст:', "31 лет"],['Родился:', "8 июня 1987"]];
+                .info__block
                   each item in userabout
-                    span.info__block-title #{item[0]}
-                    span.info__block-text #{item[1]}
-              .about__rigt
+                    .info__block-container
+                      span.info__block-title #{item[0]}
+                      span.info__block-text #{item[1]}
+              .about__right
                 .about__main-text-content
                   .about__desc Привет, меня зовут
                   .about__title Анатолий Барцев
@@ -52,7 +52,33 @@ html(lang="en")
                     p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                   .about__ps
                     | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .triangles.triangles_top
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+            polygon(points="0,0 0,100 1000,100")
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+            polygon(points="0,100 1000,100 1000,0")
         section.skils-section
+          .values
+            .container.values__container
+              .values__wrapper
+                .values__title
+                  .values__title-container
+                    .values__title-text Чем я могу быть полезен вам
+                    .values__content
+                      p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .values__widget
+                  #skills-component
+          .works
+            .container.works__container
+              .section-title.works__section-title Мои работы
+              .works__content
+                #works-slider-component
+
+        .triangles.triangles_bottom
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+            polygon(points="0,0 1000,0 1000,100")
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+            polygon(points="0,0 0,100 1000,0")
         section.works-section
         section.reviews-section
         section.callback-section
@@ -85,6 +111,4 @@ html(lang="en")
                   .text-quote__text
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете 
                   .text-quote__author Martin Golding
-        //+image('content/user.jpg', 'user-pic')
-        // +icon('link', 'link-class')
-        //.icon-bg
+include ./entry.pug
