@@ -68,20 +68,67 @@ html(lang="en")
                       p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .values__widget
                   #skills-component
+        section.works-section
           .works
             .container.works__container
               .section-title.works__section-title Мои работы
               .works__content
                 #works-slider-component
-
         .triangles.triangles_bottom
           svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
             polygon(points="0,0 1000,0 1000,100")
           svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
             polygon(points="0,0 0,100 1000,0")
-        section.works-section
-        section.reviews-section
         section.callback-section
+           .container.contacts__container
+            .contacts__about
+              #reviews-component
+                .reviews
+                  .reviews__header
+                    .reviews__title.section-title Что обо мне говорят
+                    .reviews__buttons
+                      button(type="button" @click="slide('prev')").reviews__btn.reviews__btn_prev
+                      button(type="button" @click="slide('next')").reviews__btn.reviews__btn_next
+                  .reviews__content
+                    ul.reviews__content-wrapper(ref="reviews-slider")
+                      li.reviews__content-item(v-for="review in reviews")
+                        .quote
+                          .quote__text
+                            p text
+                          .quote__user
+                            .user-min
+                              .user-min__avatar
+                                .user-min__pic-wrapper
+                                  img(:src="/").user-min__avatar-pic
+                              .user-min__info
+                                .user-min__name author-name
+                                .user-min__occ author-occ
+            .contacts__form
+              .form
+                .section-title.contacts__form-title Связаться со мной
+                form.form__elem
+                  .form__row
+                    - 
+                      var fields = [
+                        ['user', 'Введите ваше имя', 'Ковальчук Дмитрий'],
+                        ['envelope', 'Введите ваш email', 'loftschool@study.com'],
+                      ]
+                    each item in fields
+                      label.form-block(data-title=item[1])
+                        .form-block__container
+                          +icon(`${item[0]}`, 'form-block__icon') 
+                          .form-block__field
+                            input(type="text" placeholder=item[2]).form-block__input
+                  .form__row.form__row--extra-margin
+                    label.form-block(data-title="Сообщение к письму")
+                      .form-block__container.form-block__container_align_top
+                        +icon('message', 'form-block__icon') 
+                        .form-block__field
+                          textarea(
+                            placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса"
+                          ).form-block__input
+                  .from__row
+                    input(type="submit" value="отправить").gradient-btn.form__submit
       .footer-section
         .container.footer__container
           .footer__copyright
