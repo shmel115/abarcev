@@ -7,7 +7,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
-    include ./entry.pug
+    
   body
     .wrapper
       .maincontent
@@ -75,6 +75,7 @@ html(lang="en")
                     .values__content
                       p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .values__widget
+                  include ./entry.pug
                   #skills-component
         section.works-section
           .works
